@@ -1,3 +1,54 @@
+/***************************************************************
+ *  Project : Image Steganography (Encoding & Decoding)
+ *  Name  : Saurabh Navnath Galgate
+ *  Date    : 3 NOV 2025
+ *
+ *  Description :
+ *     This project hides secret data inside a BMP image using
+ *     the Least Significant Bit (LSB) technique and later 
+ *     extracts it safely without altering the visible image.
+ *
+ *  Objectives :
+ *   1. To hide data inside an image securely.
+ *   2. To perform encoding and decoding using C.
+ *   3. To learn file handling and bit manipulation.
+ *
+ *  Features :
+ *    Supports BMP image format.
+ *    Hides any text-based secret file (.txt, .c, .h, etc.).
+ *    Verifies image capacity before encoding.
+ *    Displays clear success and error messages.
+ *    User-friendly command-line usage.
+ *
+ *  How It Works :
+ *   - Encoding : Hides secret file data inside BMP image bytes.
+ *   - Decoding : Extracts the hidden data back from the image.
+ *
+ *  Command Line Usage :
+ *   ▶ Encoding :
+ *       ./a.out -e <source_image.bmp> <secret_file.txt> [output_image.bmp]
+ *       Example: ./a.out -e flower.bmp secret.txt encoded.bmp
+ *
+ *   ▶ Decoding :
+ *       ./a.out -d <encoded_image.bmp> [output_file.txt]
+ *       Example: ./a.out -d encoded.bmp
+ *
+ * Example Output :
+ *    Encoding completed successfully!
+ *    Decoding completed successfully!
+ *
+ *  Algorithm Used :
+ *   - Least Significant Bit (LSB) encoding technique
+ *   - Each bit of secret data is hidden inside image pixel bytes
+ *
+ *  Conclusion :
+ *   This project demonstrates how digital data can be hidden
+ *   securely using steganography in C, combining practical use
+ *   of file handling and bitwise operations.
+ *
+ ***************************************************************/
+
+
 #include <stdio.h>
 #include <string.h>
 #include "encode.h"
