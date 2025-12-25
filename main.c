@@ -61,11 +61,11 @@ int main(int argc, char *argv[])
 {
     if (argc < 2)
     {
-        printf("❌ Error: No arguments provided.\n");
+        printf(" Error: No arguments provided.\n");
         printf("\nUsage:\n");
-        printf("  ▶️  To Encode: ./a.out -e <source.bmp> <secret.txt> [output.bmp]\n");
-        printf("  ▶️  To Decode: ./a.out -d <stego.bmp> [output.txt]\n");
-        printf("\nℹ️  Example:\n");
+        printf("    To Encode: ./a.out -e <source.bmp> <secret.txt> [output.bmp]\n");
+        printf("    To Decode: ./a.out -d <stego.bmp> [output.txt]\n");
+        printf("\n  Example:\n");
         printf("  ./a.out -e beautiful.bmp secret.txt encoded.bmp\n");
         printf("  ./a.out -d encoded.bmp\n");
         printf("\nDescription:\n");
