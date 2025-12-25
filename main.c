@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
     {
         if (argc < 4)
         {
-            printf("❌ Error: Insufficient arguments for encoding.\n");
+            printf(" Error: Insufficient arguments for encoding.\n");
             printf("Usage: ./a.out -e <source.bmp> <secret.txt> [output.bmp]\n");
             return 0;
         }
@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("❌ Error: Invalid arguments for encoding.\n");
+            printf(" Error: Invalid arguments for encoding.\n");
             return 0;
         }
     }
@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
     {
         if (argc < 3)
         {
-            printf("❌ Error: Insufficient arguments for decoding.\n");
+            printf(" Error: Insufficient arguments for decoding.\n");
             printf("Usage: ./a.out -d <stego.bmp> [output.txt]\n");
             return 0;
         }
@@ -112,13 +112,13 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("❌ Error: Invalid arguments for decoding.\n");
+            printf(" Error: Invalid arguments for decoding.\n");
             return 0;
         }
     }
     else
     {
-        printf("⚠️  Error: Unsupported operation '%s'\n", argv[1]);
+        printf("  Error: Unsupported operation '%s'\n", argv[1]);
         printf("Use -e for encoding or -d for decoding.\n");
         printf("Example:\n  ./a.out -e image.bmp secret.txt output.bmp\n");
         printf("           ./a.out -d encoded.bmp\n");
