@@ -42,7 +42,7 @@ Status Create_output_file(DecodeInfo *decInfo)
     if (decInfo->fptr_extr == NULL)
     {
         perror("fopen");
-        fprintf(stderr, "❌ ERROR: Unable to open file %s\n", decInfo->extr_fname);
+        fprintf(stderr, " ERROR: Unable to open file %s\n", decInfo->extr_fname);
 
         return e_failure;
     }
@@ -61,7 +61,7 @@ Status open_files_for_decoding(DecodeInfo *decInfo)
     if (decInfo->fptr_enc_image == NULL)
     {
         perror("fopen");
-        fprintf(stderr, " ❌ ERROR: Unable to open file %s\n", decInfo->enc_image_fname);
+        fprintf(stderr, "  ERROR: Unable to open file %s\n", decInfo->enc_image_fname);
         return e_failure;
     }
     else
@@ -90,7 +90,7 @@ Status decode_magic_string(DecodeInfo *decInfo)
         return e_success;
     else
     {
-        printf("❌ Error :Magic string is not found");
+        printf(" Error :Magic string is not found");
         return e_failure;
     }
 }
@@ -190,49 +190,50 @@ Status do_decoding(DecodeInfo *decInfo)
 
     if (open_files_for_decoding(decInfo) == e_success)
     {
-        printf("✅ Files opened successfully.\n");
+        printf("  Files opened successfully.\n");
 
         if (decode_magic_string(decInfo) == e_success)
         {
-            printf("✅ Magic string decoded successfully.\n");
+            printf(" Magic string decoded successfully.\n");
 
             if (decode_secret_file_extn_size(decInfo) == e_success)
             {
-                printf("✅ Secret file extension size decoded successfully.\n");
+                printf(" Secret file extension size decoded successfully.\n");
 
                 if (decode_secret_file_extn(decInfo) == e_success)
                 {
-                    printf("✅ Secret file extension decoded successfully.\n");
+                    printf(" Secret file extension decoded successfully.\n");
 
                     if (decode_secret_file_size(decInfo) == e_success)
                     {
-                        printf("✅ Secret file size decoded successfully.\n");
+                        printf(" Secret file size decoded successfully.\n");
 
                         if (decode_secret_file_data(decInfo) == e_success)
                         {
-                            printf("\n🔓 Decoding completed successfully!\n");
-                            printf("📄 Extracted secret file: %s\n", decInfo->extr_fname);
+                            printf("\n Decoding completed successfully!\n");
+                            printf(" Extracted secret file: %s\n", decInfo->extr_fname);
                             printf("=================================================================\n");
                             return e_success;
                         }
                         else
-                            printf("❌ Error: Failed to decode secret file data.\n");
+                            printf(" Error: Failed to decode secret file data.\n");
                     }
                     else
-                        printf("❌ Error: Failed to decode secret file size.\n");
+                        printf(" Error: Failed to decode secret file size.\n");
                 }
                 else
-                    printf("❌ Error: Failed to decode secret file extension.\n");
+                    printf(" Error: Failed to decode secret file extension.\n");
             }
             else
-                printf("❌ Error: Failed to decode secret file extension size.\n");
+                printf(" Error: Failed to decode secret file extension size.\n");
         }
         else
-            printf("❌ Error: Failed to decode magic string.\n");
+            printf(" Error: Failed to decode magic string.\n");
     }
     else
-        printf("❌ Error: Unable to open files for decoding.\n");
+        printf(" Error: Unable to open files for decoding.\n");
 
     printf("=================================================================\n");
     return e_failure;
 }
+
